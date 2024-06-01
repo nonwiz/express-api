@@ -22,6 +22,11 @@ app.get<{}, MessageResponse>('/', (req, res) => {
   });
 });
 
+app.post('/test', (req, res) => {
+  const { email, password } = req.body;
+  res.json({ email, password });
+});
+
 app.use('/api/v1', api);
 
 app.use(middlewares.notFound);
